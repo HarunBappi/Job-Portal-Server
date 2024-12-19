@@ -77,6 +77,7 @@ async function run() {
           httpOnly: true,
           // secure: false, // secret : true only production base
           secure: process.env.NODE_ENV === "production",
+          sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
         })
         .send({ success: true });
     });
@@ -87,6 +88,7 @@ async function run() {
           httpOnly: true,
           // secure: false, // secret : true only production base
           secure: process.env.NODE_ENV === "production",
+          sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
         })
         .send({ message: true });
     });
